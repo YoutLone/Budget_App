@@ -12,7 +12,7 @@ class Ability
       expense.user == user
     end
 
-    can [:create, :read], Group
-    can [:create, :read], Expense
+    can %i[create read], Group
+    can %i[create read], Expense
   end
 end
