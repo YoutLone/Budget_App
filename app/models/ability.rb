@@ -16,4 +16,3 @@ class Ability
     can [:create, :read], Expense
   end
 end
-
