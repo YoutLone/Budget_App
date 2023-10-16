@@ -1,7 +1,7 @@
 <div class=" container d-flex flex-column justify-content-center align-items-center">
   <div class="budget-header w-100">
   <h1> <%= link_to user_groups_path do %>
-    <i class="fa fa-arrow-left" aria-hidden="true" style="color: #3778c2; padding-left: 22px"> </i>
+    <i class="fa fa-toggle-left" aria-hidden="true" style="color: #3778c2"> </i>
     <% end %>
     </h1>
   </div>
@@ -9,18 +9,18 @@
     <h2 class=" d-flex p-2  mb-3"> Create New Category</h2>
 
     <%= form_with model: @group, url: user_groups_path(current_user),  scope: :group, class: 'd-flex flex-column  col-md-5 justify-content-center align-items-center' do |f| %>
-      <div class="input-group p-2  mb-3">
-        <%= f.label :icon, class: "input-group-text" %><br />
-        <%= f.text_field :icon, autofocus: true, autocomplete: "icon", class: 'form-control' %>
-      </div>
-
       <div class="input-group p-2 mb-3">
         <%= f.label :name, class: "input-group-text" %><br />
-        <%= f.text_field :name, autocomplete: "name", class: 'form-control' %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+      </div>
+
+      <div class="input-group p-2  mb-3">
+        <%= f.label :icon, class: "input-group-text" %><br />
+        <%= f.text_field :icon, autocomplete: "icon", class: 'form-control' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Save Category", class: 'btn btn-primary' %>
+        <%= f.submit "CREATE CATEGORY", class: 'btn btn-success' %>
       </div>
     <% end %>
   </div>
