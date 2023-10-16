@@ -14,7 +14,52 @@
  *= require_self
  */
 
- @import "font-awesome";
+@import "font-awesome";
+
+body {
+  background-color: #ebedf0;
+}
+
+.budget-logo {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+  color: rgb(247, 191, 8);
+  margin: 8px;
+}
+
+.bg-color {
+  background-color: #3778c2;
+  height: 95px;
+}
+
+.header {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.expense {
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #434b54;
+}
+
+.category {
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #434b54;
+}
+
+.total-budget {
+  color: #434b54;
+  margin-bottom: 20px;
+}
 
 .field {
   margin-left: 25%;
@@ -27,12 +72,23 @@
 }
 
 .group-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: green;
-    padding: 10px;
-    width: 50%;
-    margin-bottom: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5fb523;
+  padding: 10px;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.underline {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card-img {
+  display: flex;
+  width: 100px;
+  height: 100px;
+}
