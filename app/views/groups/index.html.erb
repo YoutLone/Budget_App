@@ -1,31 +1,31 @@
+<%= render "shared/header" %>
 <div class="container mt-4">
-<h3 class="category">CATEGORY</h3>
+<h4 class="category">CATEGORY</h4>
   <div class="total-budget">
-      <h3>Overall Budget: <%= number_to_currency(@expenses.sum(&:amount)) %> </h3>
+      <h4>Overall Budget: <%= number_to_currency(@expenses.sum(&:amount)) %> </h4>
   </div>
   <% if @groups.count > 0 %>
-    <% @groups.each do |group|%>
-      <div class="card mb-4 px-3 p-3 shadow p-3 mb-5 bg-body rounded">
-        <%= link_to user_group_expenses_path(current_user, group.id), class: "text-decoration-none" do %>
-          <div class="d-flex">
-            <img src="<%= group.icon %>", width="100", height="100", alt="group_icon", class: ' me-3 p-3 border border-white rounded-circle' >        
-            <div class="card-title ms-5 d-flex justify-content-between w-100">
-              <div>
-                
-                  <h2 class="border border-white rounded-3"> <%= group.name %></h2>
-                
-                <span> <%= group.created_at.strftime("%B, %e at %H:%M") %> </span>
-              </div>
-                <div class="d-flex flex-column justify-content-between align-items-between gap-10">
-                  <span class="each-group-amount">Total Budget: $<%= group.expenses.sum(&:amount) %></span>
-                  <%= button_to "Delete Category", user_group_path(current_user, group), method: :delete, class: 'btn btn-danger p-2' %>
-                </div>
+  <% @groups.each do |group| %>
+    <div class="card mb-3 px-3 p-3 shadow p-3 mb-3 bg-body rounded">
+      <%= link_to user_group_expenses_path(current_user, group.id), class: "text-decoration-none" do %>
+        <div class="d-flex align-items-center">
+          <img src="<%= group.icon %>" width="90" height="90" alt="group_icon" class="border border-white rounded-circle">        
+          <div class="w-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="border title border-white rounded-3 mb-0"><%= group.name %></h5>
+              
+              <span class="group-amount">$<%= group.expenses.sum(&:amount) %></span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+            <span class="date"><%= group.created_at.strftime('%d%b %Y') %></span>
+              <%= button_to "Delete", user_group_path(current_user, group), method: :delete, class: 'btn btn-danger p-2' %>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
       <% end %>
-  <% else %>
+    </div>
+  <% end %>
+    <% else %>
     <span class="d-flex justify-content-center align-items-center shadow p-3 mb-5 bg-body rounded p-5">You have no categories click Add Category to continue</span>
   <% end %>
   <div class='add-group-btn'>
