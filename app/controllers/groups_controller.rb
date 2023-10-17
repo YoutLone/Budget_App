@@ -16,7 +16,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    puts group_params
     @user = User.find(params[:user_id])
     @group = Group.new(group_params)
     @group.user_id = @user.id
@@ -31,6 +30,9 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    expenses = Expense.where(group_id: @group.id)
+
+    expenses.destroy_all
     @group.destroy
     respond_to do |format|
       format.html { redirect_to user_groups_path, notice: 'Group has been successfully removed.' }
