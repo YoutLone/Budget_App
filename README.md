@@ -60,7 +60,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://budget-app-sez5.onrender.com/)
 - [Video Walkthrough](https://drive.google.com/file/d/1TVWslx-ahUw91YT3UrZHEyw3t_z-VQD5/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
