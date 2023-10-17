@@ -15,15 +15,20 @@
  */
 
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap');
 
 body {
   background-color: #ebedf0;
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .budget-logo {
   border-radius: 50%;
   width: 90px;
   height: 90px;
+  margin-left: 5px;
 }
 
 .fa-user-circle {
@@ -87,8 +92,70 @@ body {
   font-weight: bold;
 }
 
-.card-img {
+.total {
   display: flex;
-  width: 100px;
-  height: 100px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.expense-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 25px;
+}
+
+.log-btn {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #006599;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  margin-bottom: 10px;
+  outline: 0;
+  transition: all 0.5s linear;
+}
+
+.log-btn:hover {
+  background: #0077b3;
+  box-shadow: 0 5px 0 #006599;
+  transform: translateY(2px);
+}
+
+.log-btn:active {
+  background: #069;
+  box-shadow: 0 0 0 #006599;
+  transform: translateY(3px);
+}
+
+a {
+  text-decoration: none;
 }
