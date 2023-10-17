@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="expense-head">
+<div class="container mb-3">
+  <div class="expense-header">
      <h1> <%= link_to user_groups_path do %>
-        <i class="fa fa-toggle-left" aria-hidden="true" style="color: #3778c2"> </i>
+        <i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: #3778c2"> </i>
         <% end %>
      </h1>
   </div>
@@ -21,7 +21,7 @@
       <% end %>
     </div>
   <% else %>
-    <span class="d-flex justify-content-center align-items-center shadow p-3 mb-5 bg-body rounded p-5" >You have no Transactions click Add Transaction to continue</span>
+    <span class="d-flex justify-content-center align-items-center shadow p-3 mb-5 bg-body rounded p-5" >You do not have any transactions. Please click on 'Add Transaction' to proceed!</span>
   <% end %>
   <div class="add-group-btn">
     <div class="group-btn shadow p-3 mb-5 rounded">
