@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe 'groups/new', type: :feature do
   before(:each) do
     @user = User.create(name: 'Htet', email: '123abc@gmail.com', password: '123456')
-    unless @user.persisted?
-      puts @user.errors.full_messages
-    end
+    puts @user.errors.full_messages unless @user.persisted?
 
     if @user.persisted?
       visit new_user_session_path
@@ -21,7 +19,9 @@ RSpec.describe 'groups/new', type: :feature do
     it 'should display a message prompting to add a category' do
       visit user_groups_path(@user)
 
-      expect(page).to have_css('span.d-flex.justify-content-center.align-items-center.shadow.p-3.mb-5.bg-body.rounded.p-5', text: 'You have no categories click Add Category to continue')
+      expect(page).to have_css(
+        'span.d-flex.justify-content-center.align-items-center.shadow.p-3.mb-5.bg-body.rounded.p-5', text: 'You have no categories click Add Category to continue'
+      )
     end
   end
 
