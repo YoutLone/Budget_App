@@ -1,24 +1,31 @@
-<div class="container mb-3">
-  <div class="expense-header">
-     <h1> <%= link_to user_groups_path do %>
-        <i class="fa fa-arrow-circle-left" aria-hidden="true" style="color: #3778c2"> </i>
-        <% end %>
-     </h1>
+<nav class="navbar navbar-expand-md bg-color">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <h1>
+      <%= link_to user_groups_path do %>
+        <i class="fa fa-arrow-left" aria-hidden="true" style="color: white"></i>
+      <% end %>
+    </h1>
+    <h5 class="text-white text-center mx-auto">TRANSACTIONS</h5>
   </div>
-  <h3 class="d-flex justify-content-center align-items-center expense">TRANSACTONS</h3>
+</nav>
+
+<div class="container mt-4 mb-3">
   <% if @expenses.count > 0 %>
   <div class="card p-4">
-    <div class="expense-total">
-      <h3>Total Amount Budget: <%= number_to_currency(@expenses.sum(&:amount)) %></h3>
-    </div>
+    
     <div class="card-body">
-      <div class="d-flex ms-1 mb-3 gap-5">
-        <img src="<%= @group.icon %>", width="100", height="100", alt="group_icon" class="card-img">
-        <h2> <%= @group.name %> </h2>
+      <div class="d-flex ms-1 mb-3 gap-2">
+        <img src="<%= @group.icon %>", width="50", height="50", alt="group_icon" class="card-img">
+        <h2 class="tran-title"> <%= @group.name %> </h2>
       </div>
       <% @expenses.each do |expense| %>
         <%= render expense %>
       <% end %>
+
+      <div class="expense-total">
+      <h3 class="card-title">Total Amount Budget: <%= number_to_currency(@expenses.sum(&:amount)) %></h3>
+    </div>
+
     </div>
   <% else %>
     <span class="d-flex justify-content-center align-items-center shadow p-3 mb-5 bg-body rounded p-5" >You do not have any transactions. Please click on 'Add Transaction' to proceed!</span>
