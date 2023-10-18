@@ -13,3 +13,182 @@
  *= require_tree .
  *= require_self
  */
+
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap');
+
+body {
+  background-color: #ebedf0;
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.budget-logo {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin-left: 5px;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+  color: rgb(247, 191, 8);
+  margin: 8px;
+}
+
+.bg-color {
+  background-color: #3778c2;
+  height: 95px;
+}
+
+.header {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.expense {
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #434b54;
+}
+
+.category {
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #434b54;
+}
+
+.total-budget {
+  color: #434b54;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.actions {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.group-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5fb523;
+}
+
+.underline {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.expense-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+.log-btn {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #006599;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  margin-bottom: 10px;
+  outline: 0;
+  transition: all 0.5s linear;
+}
+
+.log-btn:hover {
+  background: #0077b3;
+  box-shadow: 0 5px 0 #006599;
+  transform: translateY(2px);
+}
+
+.log-btn:active {
+  background: #069;
+  box-shadow: 0 0 0 #006599;
+  transform: translateY(3px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.budget-head {
+  margin-top: 200px;
+}
+
+.btn-in {
+  background-color: #3778c2;
+  color: white;
+  border: none;
+  width: 330px;
+}
+
+.btn-up {
+  width: 330px;
+  margin-bottom: 5px;
+}
+
+.title,
+.date {
+  color: #434b54;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.group-amount {
+  color: #434b54;
+  font-size: 18px;
+}
+
+.card-img {
+  width: 90px;
+  height: 100px;
+  margin-left: -30px;
+  object-fit: cover;
+}
+
+.tran-title {
+  color: #434b54;
+  font-size: 20px;
+  margin-left: 10px;
+  padding-top: 30px;
+}

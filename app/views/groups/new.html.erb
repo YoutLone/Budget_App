@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md bg-color">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <h1>
+      <%= link_to user_groups_path do %>
+        <i class="fa fa-arrow-left" aria-hidden="true" style="color: white"></i>
+      <% end %>
+    </h1>
+    <h5 class="text-white text-center mx-auto">CATEGORY</h5>
+  </div>
+</nav>
+<div class=" container mt-5 d-flex flex-column justify-content-center align-items-center">
+  
+  <div class="card w-100 d-flex justify-content-center align-items-center  p-3 shadow p-3 mb-5 bg-body rounded">
+    <h2 class=" d-flex p-2  mb-3"> Create New Category</h2>
+
+    <%= form_with model: @group, url: user_groups_path(current_user),  scope: :group, class: 'd-flex flex-column  col-md-5 justify-content-center align-items-center' do |f| %>
+      <div class="input-group p-2 mb-3">
+        <%= f.label :name, class: "input-group-text" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+      </div>
+
+      <div class="input-group p-2  mb-3">
+        <%= f.label :icon, class: "input-group-text" %><br />
+        <%= f.text_field :icon, autocomplete: "icon", class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "CREATE CATEGORY", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>

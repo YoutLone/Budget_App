@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md bg-color">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <h1>
+      <%= link_to user_groups_path do %>
+        <i class="fa fa-arrow-left" aria-hidden="true" style="color: white"></i>
+      <% end %>
+    </h1>
+    <h5 class="text-white text-center mx-auto">TRANSACTIONS</h5>
+  </div>
+</nav>
+
+<div class="container mt-4 mb-3">
+  <% if @expenses.count > 0 %>
+  <div class="card p-4">
+    
+    <div class="card-body">
+      <div class="d-flex ms-1 mb-3 gap-2">
+        <img src="<%= @group.icon %>", width="50", height="50", alt="group_icon" class="card-img">
+        <h2 class="tran-title"> <%= @group.name %> </h2>
+      </div>
+      <% @expenses.each do |expense| %>
+        <%= render expense %>
+      <% end %>
+
+      <div class="expense-total">
+      <h3 class="card-title">Total Amount Budget: <%= number_to_currency(@expenses.sum(&:amount)) %></h3>
+    </div>
+
+    </div>
+  <% else %>
+    <span class="d-flex justify-content-center align-items-center shadow p-3 mb-5 bg-body rounded p-5" >You do not have any transactions. Please click on 'Add Transaction' to proceed!</span>
+  <% end %>
+  <div class="add-group-btn">
+    <div class="group-btn shadow p-3 mb-5 rounded">
+      <%= link_to "ADD TRANSACTION", new_user_group_expense_path(current_user), class: "new-group-btn text-light underline" %>
+    </div>
+  </div>
+  </div>
+</div>
